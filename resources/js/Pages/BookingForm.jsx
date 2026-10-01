@@ -10,7 +10,7 @@ export default function BookingForm({ services, staff }) {
         <Layout>
             <div className="grid gap-6 md:grid-cols-5">
                 <div className="overflow-hidden rounded-2xl shadow ring-1 ring-stone-200 md:col-span-2">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=60" alt="Stylist at work" className="h-full min-h-72 w-full object-cover" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=60" alt="Stylist at work" className="h-full min-h-72 w-full object-cover" loading="lazy" />
                 </div>
                 <form onSubmit={submit} className="rounded-2xl bg-white p-6 shadow ring-1 ring-stone-200 md:col-span-3">
                     <h2 className="font-serif text-2xl">New booking</h2>
@@ -26,7 +26,9 @@ export default function BookingForm({ services, staff }) {
                         {staff.map((m) => (
                             <button type="button" key={m.id} onClick={() => setData('staff_id', m.id)}
                                 className={`flex items-center gap-2 rounded-lg border p-2 text-left ${String(data.staff_id) === String(m.id) ? 'border-amber-500 bg-amber-50' : 'border-stone-200 hover:border-stone-400'}`}>
-                                <img src={m.img} alt="" className="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-stone-200 text-xs font-semibold text-stone-700">
+                                    {m.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase()}
+                                </span>
                                 <span className="text-sm font-medium">{m.name}</span>
                             </button>
                         ))}

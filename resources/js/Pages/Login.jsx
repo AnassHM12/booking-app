@@ -29,7 +29,7 @@ export default function Login() {
     return (
         <Layout>
             <div className="mx-auto max-w-md overflow-hidden rounded-2xl bg-white shadow ring-1 ring-stone-200">
-                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=60" alt="Salon chairs" className="h-40 w-full object-cover" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=60" alt="Salon chairs" className="h-40 w-full object-cover" loading="lazy" />
                 <form onSubmit={submit} noValidate className="p-6">
                     <h2 className="font-serif text-2xl">Welcome back</h2>
                     <p className="mt-1 text-sm text-stone-500">Log in to manage your bookings.</p>

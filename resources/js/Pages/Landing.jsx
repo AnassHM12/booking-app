@@ -1,11 +1,11 @@
 import { Link } from '@inertiajs/react';
 import Layout from '../Components/Layout';
 
-const HERO = 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70';
+const HERO = 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1600&q=70';
 const SHOTS = [
-    { img: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=60', title: 'Haircut & styling', text: '30-minute chair sessions with senior stylists.' },
-    { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=60', title: 'Spa & massage', text: 'Unwind with hour-long treatments in quiet rooms.' },
-    { img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=60', title: 'Consultations', text: 'Talk through what you need before you commit.' },
+    { img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=60', title: 'Haircut & styling', text: '30-minute chair sessions with senior stylists.' },
+    { img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=60', title: 'Spa & massage', text: 'Unwind with hour-long treatments in quiet rooms.' },
+    { img: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=60', title: 'Consultations', text: 'Talk through what you need before you commit.' },
 ];
 
 export default function Landing({ services }) {

@@ -17,7 +17,9 @@ export default function Staff({ staff, meta }) {
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {staff.map((m) => (
                         <div key={m.id} className="flex items-center gap-3 rounded-lg border border-stone-200 p-3">
-                            <img src={m.img} alt="" className="h-10 w-10 rounded-full object-cover" loading="lazy" />
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-stone-200 text-xs font-semibold text-stone-700">
+                                {m.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase()}
+                            </span>
                             <span className="font-medium">{m.name}</span>
                         </div>
                     ))}

@@ -27,14 +27,9 @@ class AdminController extends Controller
 
     public function staff()
     {
-        $imgs = [
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=60',
-            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=60',
-            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=60',
-        ];
         $p = Staff::orderBy('name')->paginate(15);
         return Inertia::render('Staff', [
-            'staff' => collect($p->items())->map(fn ($s, $i) => ['id' => $s->id, 'name' => $s->name, 'img' => $imgs[$s->id % count($imgs)]]),
+            'staff' => collect($p->items())->map(fn ($s) => ['id' => $s->id, 'name' => $s->name]),
             'meta' => ['current_page' => $p->currentPage(), 'last_page' => $p->lastPage()],
         ]);
     }

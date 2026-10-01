@@ -7,6 +7,10 @@ function pill(status) {
     return 'bg-amber-100 text-amber-800 border-amber-200';
 }
 
+function initials(name) {
+    return name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
 export default function Dashboard({ appointments, meta, filters }) {
     const go = (page) => router.get('/appointments', { ...filters, page }, { preserveState: true });
 
@@ -46,7 +50,7 @@ export default function Dashboard({ appointments, meta, filters }) {
                     {appointments.length === 0 && <p className="py-6 text-center text-sm text-stone-500">Nothing here yet — go book something.</p>}
                     {appointments.map((a) => (
                         <Link key={a.id} href={`/appointments/${a.id}`} className="flex items-center gap-4 py-3 hover:bg-stone-50">
-                            <img src={a.staff_img} alt="" className="h-11 w-11 rounded-full object-cover" loading="lazy" />
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-stone-900 text-sm font-semibold text-white">{initials(a.staff)}</span>
                             <div className="min-w-0 flex-1">
                                 <p className="truncate font-medium">{a.service} <span className="font-normal text-stone-400">with {a.staff}</span></p>
                                 <p className="text-sm text-stone-500">{a.when}</p>

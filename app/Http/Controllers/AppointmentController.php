@@ -15,16 +15,6 @@ use Inertia\Inertia;
 
 class AppointmentController extends Controller
 {
-    private function staffImg(int $id): string
-    {
-        $imgs = [
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=60',
-            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=60',
-            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=60',
-        ];
-        return $imgs[$id % count($imgs)];
-    }
-
     public function index(Request $request)
     {
         $user = $request->user();
@@ -38,7 +28,6 @@ class AppointmentController extends Controller
                 'id' => $a->id,
                 'service' => $a->service->name,
                 'staff' => $a->staff->name,
-                'staff_img' => $this->staffImg($a->staff->id),
                 'when' => $a->starts_at->format('D d M, H:i') . '–' . $a->ends_at->format('H:i'),
                 'status' => $a->status,
                 'payment_status' => $a->payment_status,
@@ -53,7 +42,7 @@ class AppointmentController extends Controller
         return Inertia::render('BookingForm', [
             'services' => Service::orderBy('name')->get(),
             'staff' => Staff::orderBy('name')->get()->map(fn ($s) => [
-                'id' => $s->id, 'name' => $s->name, 'img' => $this->staffImg($s->id),
+                'id' => $s->id, 'name' => $s->name,
             ]),
         ]);
     }
@@ -113,7 +102,7 @@ class AppointmentController extends Controller
                 'stripe_key' => $stripePayment ? config('services.stripe.key') : null,
                 'client_secret' => $stripePayment ? PaymentService::clientSecret($stripePayment) : null,
                 'card' => $stripePayment ? PaymentService::cardSummary($stripePayment) : null,
-                'img' => 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=60',
+                'img' => 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=60',
                 'payments' => $appointment->payments->map(fn ($p) => $p->only('id', 'provider', 'amount_cents', 'status', 'reference')),
             ],
         ]);

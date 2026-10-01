@@ -9,7 +9,7 @@ export default function Layout({ children }) {
             <nav className="bg-stone-900 text-stone-200">
                 <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-5 px-5 py-3.5">
                     <Link href="/" className="text-lg font-semibold text-white">
-                        Glow &amp; Co. <span className="font-normal text-amber-400">Bookings</span>
+                        Kaede <span className="font-normal text-amber-400">bookings</span>
                     </Link>
                     {user ? (
                         <>
@@ -39,7 +39,7 @@ export default function Layout({ children }) {
             </main>
 
             <footer className="pb-8 text-center text-xs text-stone-500">
-                Glow &amp; Co. booking demo · Laravel + React + SQLite
+                Kaede booking demo · Laravel + React + SQLite
             </footer>
         </div>
     );
