@@ -1,4 +1,4 @@
-# Kaede — Booking App (Laravel + React + Stripe)
+# Kaede booking app (Laravel + React + Stripe)
 
 A salon style appointment booking app. Customers pick a service and stylist, pay by card, and get email confirmations. I built it as a portfolio piece next to the timetable app.
 
