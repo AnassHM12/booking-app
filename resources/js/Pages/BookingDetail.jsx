@@ -47,7 +47,7 @@ export default function BookingDetail({ appointment }) {
                         )}
                         {unpaid && appointment.provider !== 'stripe' && (
                             <button onClick={payMock} className="mt-4 w-full rounded-lg bg-amber-500 py-2.5 text-sm font-semibold text-stone-900 hover:bg-amber-400">
-                                Pay ${amount} (test mode — no keys set)
+                                Pay ${amount} (test mode, no keys set)
                             </button>
                         )}
 

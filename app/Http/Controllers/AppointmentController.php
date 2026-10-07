@@ -60,7 +60,7 @@ class AppointmentController extends Controller
         $end = $start->copy()->addMinutes($service->duration_minutes);
 
         if (Appointment::staffConflict($data['staff_id'], $start->toDateTimeString(), $end->toDateTimeString())) {
-            return back()->withErrors(['conflict' => 'That stylist is already booked then — try another time.'])->withInput();
+return back()->withErrors(['conflict' => 'That stylist is already booked then. Try another time.'])->withInput();
         }
 
         $a = Appointment::create([
@@ -116,7 +116,7 @@ class AppointmentController extends Controller
             return back()->with('success', 'Already paid.');
         }
         if ($appointment->payments()->where('provider', 'stripe')->exists()) {
-            return back()->withErrors(['payment' => 'This booking uses card payment — use the card form below.']);
+return back()->withErrors(['payment' => 'This booking uses card payment. Use the card form below.']);
         }
         $payment = $appointment->payments()->where('status', 'pending')->latest()->first();
         if ($payment) $payment->update(['status' => 'succeeded']);
@@ -126,8 +126,8 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Stripe return path. The client sends ONLY the PaymentIntent ID —
-     * card data went straight to Stripe via Elements. We re-fetch the
+     * Stripe return path. The client sends ONLY the PaymentIntent ID.
+     * Card data went straight to Stripe via Elements. We re-fetch the
      * intent server-side and trust nothing from the browser.
      */
     public function confirm(Request $request, Appointment $appointment)

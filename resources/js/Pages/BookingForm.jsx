@@ -18,7 +18,7 @@ export default function BookingForm({ services, staff }) {
                     <label className="mt-4 block text-sm text-stone-500">Service</label>
                     <select value={data.service_id} onChange={(e) => setData('service_id', e.target.value)} className={field}>
                         {services.map((s) => (
-                            <option key={s.id} value={s.id}>{s.name} — ${(s.price_cents / 100).toFixed(2)} / {s.duration_minutes} min</option>
+                            <option key={s.id} value={s.id}>{s.name} (${(s.price_cents / 100).toFixed(2)} / {s.duration_minutes} min)</option>
                         ))}
                     </select>
                     <label className="mt-3 block text-sm text-stone-500">Stylist</label>

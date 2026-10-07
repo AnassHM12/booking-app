@@ -15,7 +15,7 @@ function CardForm({ clientSecret, appointmentId, amount }) {
         setBusy(true);
         setError(null);
 
-        // Card details go directly to Stripe — our server never sees them.
+        // Card details go directly to Stripe. Our server never sees them.
         const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
             payment_method: { card: elements.getElement(CardElement) },
         });
@@ -35,7 +35,7 @@ function CardForm({ clientSecret, appointmentId, amount }) {
     return (
         <form onSubmit={submit} className="mt-4 rounded-xl border border-stone-200 bg-stone-50 p-4">
             <p className="text-sm font-medium">Pay ${amount} by card</p>
-            <p className="mb-3 text-xs text-stone-500">Secured by Stripe — card details never touch our server. Use test card 4242 4242 4242 4242.</p>
+<p className="mb-3 text-xs text-stone-500">Secured by Stripe. Card details never touch our server. Use test card 4242 4242 4242 4242.</p>
             <div className="rounded-lg border border-stone-300 bg-white px-3 py-2.5">
                 <CardElement options={{ style: { base: { fontSize: '15px' } } }} />
             </div>

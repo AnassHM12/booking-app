@@ -66,7 +66,7 @@ class PaymentService
     }
 
     /**
-     * Safe-to-display card summary (brand + last4 only — never the full
+     * Safe-to-display card summary (brand + last4 only, never the full
      * number). Fetched live from Stripe; nothing card-related is stored locally.
      */
     public static function cardSummary(Payment $payment): ?array

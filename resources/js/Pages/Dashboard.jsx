@@ -47,7 +47,7 @@ export default function Dashboard({ appointments, meta, filters }) {
                     </div>
                 </div>
                 <div className="mt-3 divide-y divide-stone-100">
-                    {appointments.length === 0 && <p className="py-6 text-center text-sm text-stone-500">Nothing here yet — go book something.</p>}
+                    {appointments.length === 0 && <p className="py-6 text-center text-sm text-stone-500">Nothing here yet. Go book something.</p>}
                     {appointments.map((a) => (
                         <Link key={a.id} href={`/appointments/${a.id}`} className="flex items-center gap-4 py-3 hover:bg-stone-50">
                             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-stone-900 text-sm font-semibold text-white">{initials(a.staff)}</span>

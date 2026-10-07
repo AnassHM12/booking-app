@@ -17,8 +17,7 @@ export default function Landing({ services }) {
                         <p className="text-xs font-semibold uppercase tracking-widest text-amber-400">Salon &amp; spa bookings</p>
                         <h1 className="mt-3 font-serif text-4xl leading-tight">Book a chair, <br />skip the phone call.</h1>
                         <p className="mt-4 max-w-md text-stone-300">
-                            Pick a service, choose your stylist, and pay online. We hold your slot the second you confirm —
-                            no double-bookings, no waiting around.
+                            Pick a service, choose your stylist, and pay online. We hold your slot the second you confirm. No double bookings, no waiting around.
                         </p>
                         <div className="mt-6 flex gap-3">
                             <Link href="/register" className="rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-stone-900 hover:bg-amber-400">
